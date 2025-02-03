@@ -58,6 +58,11 @@ void Bowling(void)
 			ball1fm1 = ball1;
 			ball2fm1 = ball2;
 		}
+
+		if(frame==1)
+		{
+			PrintScore(score);
+		}
 		
 		if(frame < 10)
 		{
