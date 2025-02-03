@@ -1,0 +1,1 @@
+gcc -o bowling.exe myInfo.c bowling.c
