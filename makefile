@@ -1,1 +1,2 @@
-gcc -o bowling.exe myInfo.c bowling.c
+all:
+	gcc -o bowling.exe main.c myInfo.c bowling.c
