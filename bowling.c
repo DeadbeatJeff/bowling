@@ -6,7 +6,9 @@
  * Author:        Jeffrey Rolland
  * Creation Date: 11/12/2004
  * Modifications: 12/06/2004 - Capitalized functions per style requirements
- *         ******************************************************************************/
+ * Modifications: 02/04/2025 - Corrected problem with conputing score for Frame 
+ *                             9
+ *****************************************************************************/
 
 /******************************************************************************
  * header inclusions
