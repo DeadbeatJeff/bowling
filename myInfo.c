@@ -1,5 +1,5 @@
 /******************************************************************************
- * MyInfo.c
+ * myInfo.c
  *
  * This file contains the functionality allowing a code module to identify
  * itself.
@@ -21,10 +21,10 @@
 ******************************************************************************/
 
 #include <stdio.h>
-#include "MyInfo.h"
+#include "myInfo.h"
 
 /******************************************************************************
- * void MyInfo(int assignmentNumber, char *compileDate, char *compileTime)
+ * void myInfo(int assignmentNumber, char *compileDate, char *compileTime)
  *
  * This function display information about the program. The student's name, the 
  * the course information and instructor's name are literal definitions, but 

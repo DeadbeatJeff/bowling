@@ -1,5 +1,5 @@
 /******************************************************************************
- * Bowling.h
+ * bowling.h
  *
  * This file contains prototypes and definitions used in the bowling function.  
  * Include this file if you need the functionality provided by Bowling.c

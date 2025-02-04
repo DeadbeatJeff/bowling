@@ -18,7 +18,7 @@
 ******************************************************************************/
 
 #include <stdio.h>
-#include "Bowling.h"
+#include "bowling.h"
 
 /******************************************************************************
  * void Bowling(void)
@@ -261,39 +261,11 @@ void ComputeScore(int *score, int ball1fm2, int ball2fm2, int ball1fm1,
 	/* take care of this frame */
 	if(frame < 10) /* frames other than the (possibly) 3-pin 10th frame */
 	{
-		// if (frame != 9)
-		// {
-			/* no strike, no spare; if strike or spare, handle above later */
-			if(ball1 + ball2 < 10)
+		if(ball1 + ball2 < 10)
 			{
 				score[frame-1] = ball1 + ball2;
 			}
-		// }
-		// else
-		// {
-		// 	/* strike last two frames */
-		// 	if((ball1fm2 == 10) && (ball1fm1 == 10))
-		// 	{	
-		// 		score[(frame-1)] = 20 + ball1;
-		// 	}
-		// 	/* strike last frame, not this frame */
-		// 	else if((ball1fm1 == 10) && (ball1 < 10))
-		// 	{
-		// 		score[(frame-1)] = 10 + ball1 + ball2;
-		// 	}
-		// 	/*spare last frame */
-		// 	else if((ball1fm1 != 10) && (ball1fm1 + ball2fm1 == 10))
-		// 	{
-		// 		score[(frame-1)] = 10 + ball1;
-		// 	}
-		// 	/* no strike, no spare */
-		// 	else
-		// 	{
-		// 		score[frame-1] = ball1 + ball2;
-		// 	}
-
-		// }
-	}
+		}
 	else /* the (possibly) 3-pin 10th frame */
 	{
 		
