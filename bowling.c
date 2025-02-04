@@ -236,12 +236,16 @@ int GetBall(int ball)
 void ComputeScore(int *score, int ball1fm2, int ball2fm2, int ball1fm1, 
 				  int ball2fm1, int ball1, int ball2, int ball3, int frame)
 {
+	/* take care of previous frames first */
 	/* strike last two frames */
 	if((ball1fm2 == 10) && (ball1fm1 == 10))
 	{	
 		score[(frame-1) - 2] = 20 + ball1;
+		if(frame == 10)
+		{
+			score[(frame-1) - 1] = 20 + ball1;
+		}
 	}
-	
 	/* strike last frame, not this frame */
 	if((ball1fm1 == 10) && (ball1 < 10))
 	{
@@ -253,15 +257,41 @@ void ComputeScore(int *score, int ball1fm2, int ball2fm2, int ball1fm1,
 		score[(frame-1) - 1] = 10 + ball1;
 	}
 
-	/* this frame */
-	
+	/* take care of this frame */
 	if(frame < 10) /* frames other than the (possibly) 3-pin 10th frame */
 	{
-		/* no strike, no spare */
-		if(ball1 + ball2 < 10)
-		{
-			score[frame-1] = ball1 + ball2;
-		}
+		// if (frame != 9)
+		// {
+			/* no strike, no spare; if strike or spare, handle above later */
+			if(ball1 + ball2 < 10)
+			{
+				score[frame-1] = ball1 + ball2;
+			}
+		// }
+		// else
+		// {
+		// 	/* strike last two frames */
+		// 	if((ball1fm2 == 10) && (ball1fm1 == 10))
+		// 	{	
+		// 		score[(frame-1)] = 20 + ball1;
+		// 	}
+		// 	/* strike last frame, not this frame */
+		// 	else if((ball1fm1 == 10) && (ball1 < 10))
+		// 	{
+		// 		score[(frame-1)] = 10 + ball1 + ball2;
+		// 	}
+		// 	/*spare last frame */
+		// 	else if((ball1fm1 != 10) && (ball1fm1 + ball2fm1 == 10))
+		// 	{
+		// 		score[(frame-1)] = 10 + ball1;
+		// 	}
+		// 	/* no strike, no spare */
+		// 	else
+		// 	{
+		// 		score[frame-1] = ball1 + ball2;
+		// 	}
+
+		// }
 	}
 	else /* the (possibly) 3-pin 10th frame */
 	{
