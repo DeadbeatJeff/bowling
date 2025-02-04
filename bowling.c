@@ -241,6 +241,7 @@ void ComputeScore(int *score, int ball1fm2, int ball2fm2, int ball1fm1,
 	if((ball1fm2 == 10) && (ball1fm1 == 10))
 	{	
 		score[(frame-1) - 2] = 20 + ball1;
+		/* have to handle the case of strikes on frames 8 and 9 slightly differently */
 		if(frame == 10)
 		{
 			score[(frame-1) - 1] = 20 + ball1;
