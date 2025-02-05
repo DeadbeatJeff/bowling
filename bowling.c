@@ -1,5 +1,5 @@
 /******************************************************************************
- * Bowling.c
+ * bowling.c
  *
  * This file contains the functionality to compute bowling scores.
  *
